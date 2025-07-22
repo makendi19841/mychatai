@@ -29,7 +29,7 @@
 
 ---
 
-## ✨ Features<a id="features"></a>
+## Features<a id="features"></a>
 
 | Category                   | What you get                                                                                                             |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -43,7 +43,7 @@
 
 ---
 
-## 🏗 Architecture<a id="architecture"></a>
+## Architecture<a id="architecture"></a>
 
 ```text
 mychatai/
@@ -75,22 +75,22 @@ mychatai/
 
 ---
 
-## 🛠 Installation<a id="installation"></a>
+## Installation<a id="installation"></a>
 
 ```bash
-# 1️⃣  Clone
+# 1️Clone
  git clone https://github.com/your‑org/mychatai.git && cd mychatai
 
-# 2️⃣  Create & activate virtual‑env
+# 2️Create & activate virtual‑env
  python -m venv .venv && source .venv/bin/activate
 
-# 3️⃣  Install
+# 3️Install
  pip install -e .[dev]
 ```
 
 ---
 
-## 🚀 Quick‑Start<a id="quick-start"></a>
+## Quick‑Start<a id="quick-start"></a>
 
 ### Provide credentials (choose **one** provider)
 
@@ -100,7 +100,7 @@ export OPENAI_API_KEY="sk‑..."
 
 # Ollama (local) (make sure `ollama serve` is running)
 export OLLAMA_URL="http://localhost:11434/api/chat"
-export MYCHATAI_OLLAMA_MODEL="phi3"
+export MYCHATAI_OLLAMA_MODEL="llama3.2"
 ```
 
 ### Ask a question from the CLI
@@ -133,7 +133,7 @@ stream_to_stdout(tokens)
 
 ---
 
-## ⚙️ Configuration<a id="configuration"></a>
+## Configuration<a id="configuration"></a>
 
 All runtime options are exposed via **env‑vars** and strongly‑typed in `config.py`.
 
@@ -148,7 +148,7 @@ Add them to a local `.env` file for convenience; *pydantic‑settings* will auto
 
 ---
 
-## 🧪 Testing<a id="testing"></a>
+## Testing<a id="testing"></a>
 
 ```bash
 pytest -q          # unit tests (mocks)
@@ -159,7 +159,7 @@ mypy mychatai      # type checks
 
 ---
 
-## 🩹 Troubleshooting<a id="troubleshooting"></a>
+## Troubleshooting<a id="troubleshooting"></a>
 
 | Symptom                              | Fix                                                                            |
 | ------------------------------------ | ------------------------------------------------------------------------------ |
@@ -171,16 +171,16 @@ mypy mychatai      # type checks
 
 ---
 
-## 🗺 Roadmap<a id="roadmap"></a>
+## Roadmap<a id="roadmap"></a>
 
-* 🔌 **AnthropicClient** – add Claude support.
-* ♻️ **Async API** – optional async/await variant of `ChatService`.
-* 📝 **Docs Site** – GitHub Pages with rich examples.
-* 🐳 **Docker image** – `docker run mychatai` for quick demos.
+* **AnthropicClient** – add Claude support.
+* **Async API** – optional async/await variant of `ChatService`.
+* **Docs Site** – GitHub Pages with rich examples.
+* **Docker image** – `docker run mychatai` for quick demos.
 
 ---
 
-## 🤝 Contributing<a id="contributing"></a>
+## Contributing<a id="contributing"></a>
 
 1. Fork → branch → PR.
 2. Run `pre‑commit run --all-files` before pushing.
@@ -191,6 +191,6 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) spec
 
 ---
 
-## 📄 License<a id="license"></a>
+## License<a id="license"></a>
 
 `mychatai` is released under the **MIT License**.  See [`LICENSE`](LICENSE) for details.
