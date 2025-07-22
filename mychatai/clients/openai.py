@@ -4,8 +4,6 @@ from typing import Any, Dict
 
 from ..config import settings
 from .base import AbstractModelClient, message
-
-# Lazy import so the package is optional until the client is used
 from openai import OpenAI
 
 
