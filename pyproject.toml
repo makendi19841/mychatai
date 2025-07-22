@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 [project]
 name = "mychatai"
 version = "0.1.0"
-description = "Unified chat-LLM orchestration layer (OpenAI + Ollama)"
+description = "Unified chat-LLM orchestration layer (OpenAI + Ollama + claude + gemini)"
 authors = [
   { name = "Your Name", email = "you@example.com" }
 ]
