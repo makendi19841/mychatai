@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/CI-GitHub_Actions-blue?style=flat-square" alt="ci">
 </div>
 
-**A lightweight, production‑ready orchestration layer that lets you swap between cloud LLMs (OpenAI, Anthropic, Gemini) and local Ollama models with a single line of code.**
+**A lightweight, production‑ready orchestration layer that lets you swap between cloud LLMs (OpenAI, Anthropic, Gemini, Deepseek) and local Ollama models with a single line of code.**
 
 ---
 
