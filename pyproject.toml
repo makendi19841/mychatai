@@ -1,30 +1,24 @@
 [build-system]
-# Hatchling ≥ 1.24 has full PEP 660 editable-install support
 requires = ["hatchling>=1.24"]
 build-backend = "hatchling.build"
 
 [project]
 name = "mychatai"
 version = "0.1.0"
-description = "Unified chat-LLM orchestration layer (OpenAI + Ollama + claude + gemini)"
-authors = [
-  { name = "Your Name", email = "you@example.com" }
-]
-# ✱ If README.md exists keep the next line.  
-#   Otherwise comment it out or point to an existing file
+description = "Unified chat-LLM orchestration layer (OpenAI • Ollama • Claude • Gemini • DeepSeek)"
+authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
-
 license = { text = "MIT" }
 requires-python = ">=3.9"
 
+# ── Core runtime deps (tiny footprint) ─────────────────────────────────────────
 dependencies = [
-  "openai>=1.28",
+  "openai>=1.28",             # OpenAI + DeepSeek (OpenAI-compatible)
   "httpx>=0.27",
-  "pydantic>=2.11",          
-  "pydantic-settings>=2.1",  
+  "pydantic>=2.11",
+  "pydantic-settings>=2.1",
   "click>=8.1",
 ]
-
 
 [project.optional-dependencies]
 dev = [
@@ -34,6 +28,13 @@ dev = [
   "mypy",
 ]
 
+# UI & additional providers are kept optional
+ui = [
+  "gradio>=4.31",             # nice UI front-end
+  "google-generativeai>=0.6", # official Gemini SDK
+  "anthropic>=0.25",          # Claude SDK
+]
+
 [project.scripts]
-# `pip install -e .` will register this console-script entry-point
-ask = "scripts.ask:main"
+ask   = "scripts.ask:main"
+serve = "serve_gradio:demo.launch"     # python -m mychatai serve  OR  serve

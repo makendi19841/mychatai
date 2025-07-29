@@ -77,6 +77,9 @@ mychatai/
 
 ## Installation<a id="installation"></a>
 
+export OPENAI_API_KEY="sk-live-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
 ```bash
 # 1️Clone
  git clone https://github.com/your‑org/mychatai.git && cd mychatai
@@ -101,6 +104,7 @@ export OPENAI_API_KEY="sk‑..."
 # Ollama (local) (make sure `ollama serve` is running)
 export OLLAMA_URL="http://localhost:11434/api/chat"
 export MYCHATAI_OLLAMA_MODEL="llama3.2"
+export GEMINI_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
 ```
 
 ### Ask a question from the CLI
@@ -110,6 +114,9 @@ export MYCHATAI_OLLAMA_MODEL="llama3.2"
 
 # or via entry‑point
 ask -p ollama --no-stream "What is camera calibration?"
+ask -p gemini --no-stream "What is camera calibration?"
+ask -p anthropic --no-stream "What is camera calibration?"
+ask -p deepseek --no-stream "What is camera calibration?"
 ```
 
 ### Use it in Python

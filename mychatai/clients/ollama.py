@@ -12,8 +12,8 @@ class OllamaClient(AbstractModelClient):
 
     def __init__(self, model: str | None = None, *, client: httpx.Client | None = None):
         self._base_url = settings.ollama_url
-        self._model = model or settings.ollama_model
-        #self._headers = settings.ollama_headers
+        self._model = settings.ollama_model
+        self._headers = settings.ollama_headers
         self._client = client or httpx.Client(timeout=settings.request_timeout)
 
     def chat(self, messages: Iterable[message], *, stream: bool = False, **kwargs: Any,) -> str | Generator[str, None, None]:
@@ -24,8 +24,7 @@ class OllamaClient(AbstractModelClient):
             **kwargs,
         }
         if stream:
-            response = self._client.post(self._base_url, json=payload, headers=self._headers, stream=True)   # import httpx
-            # response = requests.post(self._base_url, json=payload,headers=self._headers, stream=True)      # import requests
+            response = self._client.post(self._base_url, json=payload, headers=self._headers)  
             response.raise_for_status()
 
             def _generator():

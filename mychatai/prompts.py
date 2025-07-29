@@ -16,6 +16,16 @@ USER_TEMPLATE = (
     "  • Business use-cases\n"
     "  • Edge-case resilience strategy\n" )
 
+USER_TEMPLATE_embeded = (
+    "You have received the following technical question:\n"
+    "{What is Camera Calibration}\n\n"
+    "Please  provide:\n"
+    "  • Concept explanation\n"
+    "  • Implementation diagram (ASCII acceptable)\n"
+    "  • Architecture specification\n"
+    "  • Business use-cases\n"
+    "  • Edge-case resilience strategy\n" )
+
 def build_messages(question: str) -> list[dict[str, str]]:
     """Return OpenAI-compatible chat messages."""
     return [
@@ -23,4 +33,9 @@ def build_messages(question: str) -> list[dict[str, str]]:
         {"role": "user", "content": USER_TEMPLATE.format(question=question)},
     ]
 
+def build_user_prompt() -> list[dict[str, str]]:
+    
+    return [
+        {"role": "user", "content": USER_TEMPLATE_embeded},  
+    ]
 
